@@ -12,7 +12,7 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
    
    Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra con las clásicas opciones de un programa como lo son *Archivo, Editar, Ver, ente otros.* Por otro lado, se puede observar una pestaña llamada **Explorador** tal como lo muestra la siguiente captura. Si esta pestaña no aparece hacer clic en la opción *Explorador* del menú *Ver*
 
-   ![Alt text](images/Explorador.JPG?raw=true "Explorador")
+   <center>![Alt text](images/Explorador.JPG?raw=true "Explorador")</center>
 
    En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
 
@@ -56,7 +56,7 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
     
     > Agregar dos nuevos atributos a la entidad que permitan al sistema almacenar el nombre y la edad de los estudiantes, el nombre debe ser obligatorio mientras que la edad no.
 
-    Finalmente, se espera obsevar la siguiente entidad completa.
+    Finalmente, se espera obsevar la siguiente entidad completa, se puede apreciar que datamodeler utiliza el símbolo '#' para representar identificadores primarios, la 'U' para los atributos únicos, el '*' para los atributos obligatorios y la 'o' para los atributos opcionales.
 
     ![Alt text](images/EstudianteEntidad.JPG?raw=true "Entidad Estudiante")
 
