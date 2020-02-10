@@ -12,11 +12,7 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
    
    Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra con las clásicas opciones de un programa como lo son *Archivo, Editar, Ver, ente otros.* Por otro lado, se puede observar una pestaña llamada **Explorador** tal como lo muestra la siguiente captura. Si esta pestaña no aparece hacer clic en la opción *Explorador* del menú *Ver*
 
-   <!-- <center>![Alt text](images/Explorador.JPG?raw=true "Explorador")</center> -->
-
-   <!-- ![Alt text](images/Explorador.JPG?raw=true "Explorador")  -->
-
-   <center>https://github.com/juan-bol/Modelado/blob/master/images/Explorador.JPG</center> 
+   ![Alt text](images/Explorador.JPG?raw=true "Explorador") 
 
    En esta pestaña se encontrarán todos los proyectos (diseños que se tengan abiertos), así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
 
@@ -38,7 +34,7 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > Como caso práctico, se sugiere realizar el modelo lógico de un sistema que desea almacenar la información de estudiantes y de su país de nacimiento. Para ello, ingresar `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. En las siguientes secciones se irá desarrollando dicho modelo.
+    > Como caso práctico, se sugiere realizar el modelo lógico de un sistema que desea almacenar la información de estudiantes y de sus materias matriculadas en un solo periodo académico. Para ello, ingresar `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. En las siguientes secciones se irá desarrollando dicho modelo.
     
   * **Atributo**
     
@@ -66,13 +62,24 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 
   * **Relación**
 
+    Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad existe una cardinalidad. La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). Una relación puede ser identificante o no, una relación identificante finalmente es mapeada al identificador primario de la entidad destino.
 
+    > Se pide al estudiante que cree una nueva entidad para que el sistema pueda almacenar las materias que el estudiante podrá matricular, una materia tiene su identificador, un nombre y un número de creditos, siendo todos estos obligatorios. Una vez hecho esto se espera tener lo siguiente:
 
-    * Origen - Destino
+    ![Alt text](images/EstudianteMateria.JPG?raw=true "Entidades Estudiante y Materia")
+
+    Dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M. Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente sobre la entidad destino, abriendo un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`, por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. De esta manera se logra crear la relación entre Estudiante y Materia.
+
+    ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Entidades Estudiante y Materia")
+
     * Claves foráneas
-    * Cardinalidades
     * Identificación de relación 
+
+
 4. Guardar (exportar) un proyecto en un archivo *.dmd*
+   
 5. Subvista como gestión de entidades
+   
 6. Ingeniería a un modelo Relacional
+   
 7. Generación automática de un script *.ddl*
