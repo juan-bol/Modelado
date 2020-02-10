@@ -70,10 +70,17 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 
     El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M. Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino, abriendo de esta manera un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`, por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia observando lo siguiente.
 
-    ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Entidades Estudiante y Materia")
+    ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Relación Estudiante y Materia")
 
-    * Claves foráneas
-    * Identificación de relación 
+    > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad Profesor se espera tener lo siguiente.
+
+    ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Entidades Estudiante, Materia y Profesor")
+
+    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión mediante la opción *Nueva Relación 1:N*. Al finalizar lo anterior, se obtiene lo siguiente.
+
+    ![Alt text](images/ModeloCompleto.JPG?raw=true "Relación Profesor y Materia")
+
+    Observe que al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar, este hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este nuevo atributo se convierte en una clave primaria que siempre apuntará a algún registro de la otra entidad.
 
 
 4. Guardar (exportar) un proyecto en un archivo *.dmd*
