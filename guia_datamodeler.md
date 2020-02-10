@@ -14,11 +14,11 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 
    ![Alt text](images/Explorador.jpg?raw=true "Explorador")
 
-    En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
+   En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
 
 3. **Modelo Lógico**
 
-    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle [*(oracle-sql-developer-data-modeler-users-guide)*](https://github.com/../../propuesta_tabla_contenido.md), un diagrama Entidad-Relación que proporiciona una vista independiente de la implementación de la información del negocio. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. Gran parte de los anteriores conceptos se desarrollarán en la presente guía, a continuación se muestra una captura la estructura de un modelo lógico.
+    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle [*(oracle-sql-developer-data-modeler-users-guide)*](Documents/oracle-sql-developer-data-modeler-users-guide.pdf), un diagrama Entidad-Relación que proporiciona una vista independiente de la implementación de la información del negocio. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. Gran parte de los anteriores conceptos se desarrollarán en la presente guía, a continuación se muestra una captura la estructura de un modelo lógico.
 
     ![Alt text](images/ModeloLogico.jpg?raw=true "Modelo Lógico")
 
