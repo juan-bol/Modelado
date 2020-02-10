@@ -12,9 +12,13 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
    
    Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra con las clásicas opciones de un programa como lo son *Archivo, Editar, Ver, ente otros.* Por otro lado, se puede observar una pestaña llamada **Explorador** tal como lo muestra la siguiente captura. Si esta pestaña no aparece hacer clic en la opción *Explorador* del menú *Ver*
 
-   <center>![Alt text](images/Explorador.JPG?raw=true "Explorador")</center>
+   <!-- <center>![Alt text](images/Explorador.JPG?raw=true "Explorador")</center> -->
 
-   En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
+   <!-- ![Alt text](images/Explorador.JPG?raw=true "Explorador")  -->
+
+   <center>https://github.com/juan-bol/Modelado/blob/master/images/Explorador.JPG</center> 
+
+   En esta pestaña se encontrarán todos los proyectos (diseños que se tengan abiertos), así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
 
 3. **Modelo Lógico**
 
