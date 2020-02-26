@@ -1,17 +1,21 @@
 # Tutorial de Oracle sql Developer Datamodeler
+## Escrito por Juan David Bolaños, revisado por Angela Villota Gómez.
 
 ## Introducción
 
 Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler.
-Datamodeles es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
+Datamodeler es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
 Al finalizar la guía, se espera que los estudiantes se encuentre en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
 
 1. **Instalación**
    
-   La herramienta Datamodeler 19.4 con su respectivo JDK se puede descargar gratuiramente desde [*oracle.com*](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html), la descarga requiere la creación de una cuenta Oracle.
+   La herramienta Datamodeler 19.4 con su respectivo JDK se puede descargar gratuitamente desde [*oracle.com*](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html). 
+   La descarga requiere la creación de una cuenta Oracle.
+   [//]: # (Una vez descargado, debe descomprimir el archivo y ejecutarlo ... poner algunas instrucciones o enlace a ellas)
    
 2. **Iniciar un proyecto**
    
+   [//]: # (Cómo se ejecuta el programa?)
    Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra de herramientas con las clásicas opciones de un programa como lo son *Archivo, Editar, Ver, ente otros.* Por otro lado, se puede observar una pestaña llamada **Explorador** tal como lo muestra la siguiente captura. Si esta pestaña no aparece hacer clic en la opción *Explorador* del menú *Ver*.
 
    ![Alt text](images/Explorador.JPG?raw=true "Explorador") 
