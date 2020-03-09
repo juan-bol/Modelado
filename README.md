@@ -5,9 +5,10 @@
 
 Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler.
 Datamodeler es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
-Al finalizar la guía, se espera que los estudiantes se encuentre en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
+Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
 
 > Como caso práctico, se sugiere realizar el modelo lógico de un sistema de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan. Este modelo se irá desarrollando a medida que se explican cada uno de los conceptos necesarios.
+
 
 1. **Instalación**
    
@@ -16,10 +17,8 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
    
 2. **Iniciar un proyecto**
    
-    [//]: # (Cuáles son los requerimientos? )
-     [//]: # (Al iniciar la herramienta quiere actualizar el jdk, y pregunta si se quiere importar proyectos de versiones antiguas)
     Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra de herramientas horizontal con las clásicas opciones como lo son *Archivo, Editar, Ver, ente otros.*
-    Si es la primera vez que esta aplicación es ejecutada y anteriormene se contaba con alguna otra versión instalada, la herramienta preguntará si desea importar proyectos de otras versiones así como ciertas configuraciones, por ser esta la primera interacción con la herramienta omitiremos esta opción.
+    Si es la primera vez que esta aplicación es ejecutada y anteriormene se contaba con alguna otra versión instalada, la herramienta preguntará si desea importar proyectos de otras versiones, así como ciertas configuraciones, por ser esta la primera interacción con la herramienta omitiremos esta opción.
 
     Por otro lado, se pueden observar unas pestañas llamadas **Explorador, Mensajes-Log y Navegador**, ubicadas en la parte izquierda, inferior y derecha de la herramienta, respectivamente. Adicionalmente, en el centro de la herramienta se encuentra el espacio de trabajo donde se podrán ver y editar los archivos de los proyectos. 
     En *Mensajes-Log* se muestran todos los logs que la herramienta genera como mensaje de salida al realizar diferentes acciones. 
@@ -33,10 +32,10 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
 
 3. **Modelo Lógico**
 
-    [//]: # (Esta explicación esta muy bien, pero no deja claro cuál es la diferencia entre un modelo E-R y un modelo lógico.  Porque el modelo E-R es un modelo conceptual )
+    [//]: # (Esta explicación esta muy bien, pero no deja claro cuál es la diferencia entre un modelo E-R y un modelo lógico.  Porque el modelo E-R es un modelo conceptual)
 
-    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle [*(oracle-sql-developer-data-modeler-users-guide)*](Documents/oracle-sql-developer-data-modeler-users-guide.pdf), un diagrama Entidad-Relación que proporciona una vista de la información del negocio independiente de la implementación. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. 
-    Estos conceptos se desarrollarán posteriormente en esta guía, a continuación se muestra la estructura de un modelo lógico.
+    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle en [*(oracle-sql-developer-data-modeler-users-guide)*](Documents/oracle-sql-developer-data-modeler-users-guide.pdf), un diagrama Entidad-Relación que proporciona una vista de la información del negocio independiente de la implementación. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. 
+    Estos conceptos se desarrollarán posteriormente en esta guía, a continuación, se muestra la estructura de un modelo lógico.
 
     ![Alt text](images/ModeloLogico.JPG?raw=true "Modelo Lógico")
 
@@ -59,7 +58,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
   * **Atributo**
     
     Un atributo (propiedad, campo) es una característica común de una entidad en particular. Estos atributos son mapeados finalmente a una columna de una tabla en el modelo relacional.
-    Para visualizar los atributos de una entidad se debe abrir la pestaña *Atributos* de la las propiedades de la entidad, lo cual muestra una lista con los atributos y los campos de cada uno de ellos, como se muestra en la siguiente figura.
+    Para visualizar los atributos de una entidad se debe abrir la pestaña *Atributos* de las propiedades de la entidad, lo cual muestra una lista con los atributos y los campos de cada uno de ellos, como se muestra en la siguiente figura.
     
     ![Alt text](images/MenuAtributo.JPG?raw=true "Menú Atributo")
 
@@ -68,7 +67,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
     Si se selecciona un atributo como UID primario, este también será obligatorio. 
     No pueden existir dos registros distintos en esta tabla con igual valor en el atributo definido como UID.
 
-    A continuación se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguient efigura ilustra este ejemplo. 
+    A continuación, se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguient efigura ilustra este ejemplo. 
 
     ![Alt text](images/EstudianteID.JPG?raw=true "ID Estudiante")
     
@@ -78,10 +77,10 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
 
     * *Tipo de Dato*: Permite especificarle al atributo un dominio, un tipo lógico, dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta. Sin embargo, como a cada dominio se le debe seleccionar finalmente un tipo lógico y buscando una mayor simplicidad para el desarrollo de esta guía, no se usarán los dominios y solo se usarán los tipos lógicos. Seleccionar *Lógico* tipo de dato de la entidad. 
 
-    * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric,VARCHAR, entre otros*. El tipo de dato lógico sugerido para un identificador es numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccionar *Numeric* como tipo de origen del atributo. Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
+    * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric, VARCHAR, entre otros*. El tipo de dato lógico sugerido para un identificador es numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccionar *Numeric* como tipo de origen del atributo. Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
     
     Al seleccionar el tipo de origen se puede observar que se habilitan nuevos campos dependiendo del tipo de origen que se seleccione, en este caso al seleccionar *Numeric* se habilitan las opciones *Presición y Escala*. Este tipo de dato permite almacenar tanto números enteros como fraccionales, la precisión es el número total de dígitos desde el dígito más signficativo hasta el menos significativo, mientras que la escala es el número de dígitos desde la coma hacia el dígito menos significativo. 
-    Supongamos que se desea  Como se desea almacenar alrededor de mil estudiantes.  Entonces la precisión es `4`  y la escala `0` porque esta precisión y escala permiten un máximo valor de 9999 sin cifras decimales.
+    Supongamos que se desea almacenar alrededor de mil estudiantes.  Entonces la precisión es `4` y la escala `0` porque esta precisión y escala permiten un máximo valor de 9999 sin cifras decimales.
 
     Finalmente se selecciona la opción UIDPrimario para definir a este atributo como el identificador de la entidad.
 
