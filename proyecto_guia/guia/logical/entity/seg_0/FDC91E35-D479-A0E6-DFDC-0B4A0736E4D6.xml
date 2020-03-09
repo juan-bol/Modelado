@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FDC91E35-D479-A0E6-DFDC-0B4A0736E4D6" name="PROFESOR">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 20:56:25 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>PROFE</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="PROFESOR_ID" id="6D85C679-0C46-4241-07F3-5EE1B90E09D1">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 20:56:31 UTC</createdTime>
+<comment>Identificador el profesor en el sistema</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE_PROFESOR" id="E6239E58-1CEA-EA2C-0F4D-43E846B0C461">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 20:57:03 UTC</createdTime>
+<comment>Nombre del profesor</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA_INGRESO" id="544D4E9D-F9A3-F0FC-FE75-D2C664AA273A">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 20:57:36 UTC</createdTime>
+<comment>Fecha en que el profesor ingresó al sistema</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1D140CCF-A094-3A1C-14C3-823B3557CC91" name="PROFESOR PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 20:56:49 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6D85C679-0C46-4241-07F3-5EE1B90E09D1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

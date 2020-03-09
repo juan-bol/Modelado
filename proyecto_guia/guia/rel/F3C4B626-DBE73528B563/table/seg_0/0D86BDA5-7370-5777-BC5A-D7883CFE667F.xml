@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0D86BDA5-7370-5777-BC5A-D7883CFE667F" name="ESTUDIANTE">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>241AAD61-F804-DDB8-AF8D-89D345A478DC</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<abbreviation>ESTUD</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ESTUDIANTE_ID" id="70730A7D-B0E5-ABC1-B060-C74A1735C761">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Identificador del estudiante en el sistema</comment>
+<generatorID>BCEF9DB6-B411-F83B-3F33-E8B45C92F7A9</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CEDULA_ESTUDIANTE" id="E02F5A0E-750A-F0A9-F21E-7C420AE8CAF5">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Cédula del estudiante</comment>
+<generatorID>681EAAAF-4F94-91AD-EEF8-80DB12CF6025</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_ESTUDIANTE" id="1974335B-D889-0648-8672-4C183D470012">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Nombre del estudiante</comment>
+<generatorID>80686467-F9A0-496C-6A25-5F41CFE0B752</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EDAD_ESTUDIANTE" id="E6C9C105-7153-4E45-9EBC-970EF662AF89">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Edad del estudiante</comment>
+<generatorID>FE3F8639-9676-3299-8BF0-CE8E05C2AF35</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="24E8A3A3-46AE-9F67-2F74-7E3FCAB0A5B8" name="ESTUDIANTE_PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>440443DD-5A2A-7E3A-0FD1-AA71DC395793</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="70730A7D-B0E5-ABC1-B060-C74A1735C761"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ED317E81-0A70-D013-26F3-B00739D87BB7" name="ESTUDIANTE_CEDULA_ESTUDIANTE_UN">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>E4DB5C5D-0A74-E114-F69D-C5FE19FB698B</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E02F5A0E-750A-F0A9-F21E-7C420AE8CAF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

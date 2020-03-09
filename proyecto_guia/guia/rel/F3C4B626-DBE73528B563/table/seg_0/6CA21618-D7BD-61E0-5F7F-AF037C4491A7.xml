@@ -1,0 +1,66 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6CA21618-D7BD-61E0-5F7F-AF037C4491A7" name="MATERIA">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>02FC558C-EC5C-DD88-4E83-B43DE892BB73</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<abbreviation>MAT</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MATERIA_ID" id="040B010D-AD86-5384-9554-CFD24C3DA4EC">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Identificador de la materia en el sistema</comment>
+<generatorID>405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_MATERIA" id="BB1AE8DE-DD80-B3C7-AC77-744151C08F92">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Nombre de la materia</comment>
+<generatorID>0D3560D3-6437-84DB-619B-8B7323F0CFF9</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NUMERO_CREDITOS" id="F88C2168-74FC-72FA-1ABD-201FC4001FE1">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<comment>Número de créditos de la materia</comment>
+<generatorID>E8575B52-F566-876B-B758-B5BC34436EDA</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D03D29EF-2A19-BB30-BCC4-F7C236A52A60" name="MATERIA_PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>C987DF28-9DD6-2F9C-F1D5-0DABFF95F121</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="040B010D-AD86-5384-9554-CFD24C3DA4EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="02FC558C-EC5C-DD88-4E83-B43DE892BB73" name="MATERIA">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:36:16 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>MAT</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="MATERIA_ID" id="405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:36:26 UTC</createdTime>
+<comment>Identificador de la materia en el sistema</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE_MATERIA" id="0D3560D3-6437-84DB-619B-8B7323F0CFF9">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:37:01 UTC</createdTime>
+<comment>Nombre de la materia</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NUMERO_CREDITOS" id="E8575B52-F566-876B-B758-B5BC34436EDA">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:37:35 UTC</createdTime>
+<comment>Número de créditos de la materia</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PROFESOR_ID" id="A818F36E-6EB1-B310-85FE-C89F6DFAB152">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 21:03:33 UTC</createdTime>
+<comment>Identificador el profesor en el sistema</comment>
+<generatorID>318999FD-EAC4-D101-FC57-0E0058F8071E</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>6D85C679-0C46-4241-07F3-5EE1B90E09D1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C987DF28-9DD6-2F9C-F1D5-0DABFF95F121" name="MATERIA PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:36:48 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="241AAD61-F804-DDB8-AF8D-89D345A478DC" name="ESTUDIANTE">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-09 22:48:49 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<shortName>ESTUD</shortName>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ESTUDIANTE_ID" id="BCEF9DB6-B411-F83B-3F33-E8B45C92F7A9">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-09 23:02:13 UTC</createdTime>
+<comment>Identificador del estudiante en el sistema</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CEDULA_ESTUDIANTE" id="681EAAAF-4F94-91AD-EEF8-80DB12CF6025">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 17:57:16 UTC</createdTime>
+<comment>Cédula del estudiante</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NOMBRE_ESTUDIANTE" id="80686467-F9A0-496C-6A25-5F41CFE0B752">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 18:08:59 UTC</createdTime>
+<comment>Nombre del estudiante</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="EDAD_ESTUDIANTE" id="FE3F8639-9676-3299-8BF0-CE8E05C2AF35">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 18:10:35 UTC</createdTime>
+<comment>Edad del estudiante</comment>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="440443DD-5A2A-7E3A-0FD1-AA71DC395793" name="Estudiante PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 16:43:43 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BCEF9DB6-B411-F83B-3F33-E8B45C92F7A9</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="E4DB5C5D-0A74-E114-F69D-C5FE19FB698B" name="CEDULA_UK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 17:59:03 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<newElementsIDs>681EAAAF-4F94-91AD-EEF8-80DB12CF6025</newElementsIDs>
+<usedAttributes>
+<attributeRef>681EAAAF-4F94-91AD-EEF8-80DB12CF6025</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PROFESOR_MATERIA" directorySegmentName="seg_0" id="318999FD-EAC4-D101-FC57-0E0058F8071E">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 21:03:33 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<engineerTo>
+<item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
+</engineerTo>
+<sourcePk>1D140CCF-A094-3A1C-14C3-823B3557CC91</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FDC91E35-D479-A0E6-DFDC-0B4A0736E4D6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>02FC558C-EC5C-DD88-4E83-B43DE892BB73</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

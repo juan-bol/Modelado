@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D0328228-C882-D05A-678C-F24D066F3F80" name="Relation_1">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ESTUDIANTE_ESTUDIANTE_ID" id="BE98D2F2-A8DD-C83B-84B6-FD7392BD314A">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0F69653F-B93A-300B-BBC9-ADD25D32A155" referredColumn="70730A7D-B0E5-ABC1-B060-C74A1735C761"/>
+</associations>
+</Column>
+<Column name="MATERIA_MATERIA_ID" id="B660E189-2416-5030-E895-5EED50984BA1">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76A33AB9-71BA-E449-A873-D74C667DE978" referredColumn="040B010D-AD86-5384-9554-CFD24C3DA4EC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="85945EA3-304E-ECF3-39B7-C14F06A7FBFB" name="Relation_1_PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE98D2F2-A8DD-C83B-84B6-FD7392BD314A"/>
+<colUsage columnID="B660E189-2416-5030-E895-5EED50984BA1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="417D6BD9-3D8C-3BAB-3B7C-D3183185D003" name="Relation_1_ESTUDIANTE_FK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>D7D30BD8-3D63-89A2-5761-92352F6EF8F6</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE98D2F2-A8DD-C83B-84B6-FD7392BD314A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="70267121-438C-15C0-2CD0-21E12C0F5275" name="Relation_1_MATERIA_FK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-10 19:42:24 UTC</createdTime>
+<generatorID>D7D30BD8-3D63-89A2-5761-92352F6EF8F6</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B660E189-2416-5030-E895-5EED50984BA1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

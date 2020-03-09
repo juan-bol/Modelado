@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="guia" id="09D8DD57-E1D0-80B8-EB1D-F74F601E3183" version="3.5">
+<createdBy>juan-</createdBy>
+<createdTime>2020-02-09 21:45:33 UTC</createdTime>
+<ownerDesignName>guia</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>09D8DD57-E1D0-80B8-EB1D-F74F601E3183</designId>
+</OSDM_Design>

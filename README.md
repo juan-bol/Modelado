@@ -7,63 +7,63 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 Datamodeler es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
 Al finalizar la guía, se espera que los estudiantes se encuentre en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
 
+> Como caso práctico, se sugiere realizar el modelo lógico de un sistema de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan. Este modelo se irá desarrollando a medida que se explican cada uno de los conceptos necesarios.
+
 1. **Instalación**
    
-   La herramienta Datamodeler 19.4 con su respectivo JDK se puede descargar gratuitamente desde [*oracle.com*](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html). 
-   La descarga requiere la creación de una cuenta Oracle.
-
-   [//]: # (Una vez descargado, debe descomprimir el archivo y ejecutarlo ... poner algunas instrucciones o enlace a ellas)
+    La herramienta Datamodeler 19.4 con su respectivo JDK se puede descargar gratuitamente desde [*oracle.com*](https://www.oracle.com/tools/downloads/sql-data-modeler-downloads.html). 
+    La descarga requiere la creación de una cuenta Oracle, una vez se crea esta cuenta se inicia la descarga de una carpeta comprimida donde se encuentra el ejecutable de la aplicación, este es el archivo *datamodeler.exe*
    
 2. **Iniciar un proyecto**
    
-   [//]: # (Cómo se ejecuta el programa? )
     [//]: # (Cuáles son los requerimientos? )
      [//]: # (Al iniciar la herramienta quiere actualizar el jdk, y pregunta si se quiere importar proyectos de versiones antiguas)
-   Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra de herramientas con las clásicas opciones  como  *Archivo, Editar, Ver, ente otros.* 
+    Al ejecutar el programa, se inicia su interfaz gráfica en donde se puede observar en la parte superior una barra de herramientas horizontal con las clásicas opciones como lo son *Archivo, Editar, Ver, ente otros.*
+    Si es la primera vez que esta aplicación es ejecutada y anteriormene se contaba con alguna otra versión instalada, la herramienta preguntará si desea importar proyectos de otras versiones así como ciertas configuraciones, por ser esta la primera interacción con la herramienta omitiremos esta opción.
 
-   [//]: # (Está muy bien lo del menú, podrías también explicar cada una de las partes de la ventana? el frame de la izquierda, central, derecha, etc y luego sí continuar con lo del explorador)
-   Por otro lado, se puede observar una pestaña llamada **Explorador** tal como lo muestra la siguiente captura. Si esta pestaña no aparece hacer clic en la opción *Explorador* del menú *Ver*.
+    Por otro lado, se pueden observar unas pestañas llamadas **Explorador, Mensajes-Log y Navegador**, ubicadas en la parte izquierda, inferior y derecha de la herramienta, respectivamente. Adicionalmente, en el centro de la herramienta se encuentra el espacio de trabajo donde se podrán ver y editar los archivos de los proyectos. 
+    En *Mensajes-Log* se muestran todos los logs que la herramienta genera como mensaje de salida al realizar diferentes acciones. 
+    En *Navegador* se muestra una vista alejada del archivo que tengamos abierto en nuestro espacio de trabajo el cual, por el momento, muestra tres pestañas, llamadas "Logical(Sin título_1)", "Relational(Sin_título_1)" y una de Bienvenida de Oracle, esta última puede cerrarse. Estas dos primeras pestañas son el modelo lógico y el modelo relacional del diseño que se genera por defecto al iniciar el programa, este diseño tiene por nombre "Sin título_1".
 
-   ![Alt text](images/Explorador.JPG?raw=true "Explorador") 
+    En la siguiente figura se puede observar la pestaña *Explorador*, si esta pestaña no aparece se debe hacer clic en la opción *Explorador* del menú *Ver*.
 
-   En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones. Por defecto, el programa inicia con un diseño abierto llamado "Sin título_1".
+    ![Alt text](images/Explorador.JPG?raw=true "Explorador") 
 
-   [//]: # (Tengo además tres pestañas, dos asociadas a sin_título y una de oracle, se cierran, o se ignoran por ahora?)
+    En esta pestaña se encontrarán todos los proyectos (Diseños) que se tengan abiertos, así como la estructura de cada uno de estos y los principales archivos editables, tal como lo son el *Modelo Lógico* y los *Modelos Relacionales*, los cuales se detallarán en las siguientes secciones.
 
 3. **Modelo Lógico**
 
-[//]: # (Esta explicación esta muy bien, pero no deja claro cuál es la diferencia entre un modelo E-R y un modelo lógico.  Porque el modelo E-R es un modelo conceptual )
+    [//]: # (Esta explicación esta muy bien, pero no deja claro cuál es la diferencia entre un modelo E-R y un modelo lógico.  Porque el modelo E-R es un modelo conceptual )
 
-    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle [*(oracle-sql-developer-data-modeler-users-guide)*](Documents/oracle-sql-developer-data-modeler-users-guide.pdf), un diagrama Entidad-Relación que proporiciona una vista independiente de la implementación de la información del negocio. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. 
-    Estos conceptos se desarrollarán en esta guía, a continuación se muestra la estructura de un modelo lógico.
+    Un modelo lógico en datamodeler es, de acuerdo a la docuementación oficial de Oracle [*(oracle-sql-developer-data-modeler-users-guide)*](Documents/oracle-sql-developer-data-modeler-users-guide.pdf), un diagrama Entidad-Relación que proporciona una vista de la información del negocio independiente de la implementación. Un modelo lógico está compuesto por un conjunto de Entidades, Relaciones, Herencias, Vistas, Subvistas y Visualizaciones. 
+    Estos conceptos se desarrollarán posteriormente en esta guía, a continuación se muestra la estructura de un modelo lógico.
 
     ![Alt text](images/ModeloLogico.JPG?raw=true "Modelo Lógico")
 
-    Para poder abrir el editor del modelo lógico, se debe hacer clic derecho sobre *Modelo Lógico* y seleccionar la opción *Mostrar*, de esta manera, se habilita un menú de herramientas para la edición del modelo, este menú es el siguiente.
+    Como se mencionó anteriormente, el modelo lógico del diseño actual tiene por nombre "Logical(Sin título_1)", si este no se encuentra visible se debe hacer clic derecho sobre *Modelo Lógico* y seleccionar la opción *Mostrar*, de esta manera, se habilita un menú de herramientas para la edición del modelo, este menú es el siguiente.
 
     ![Alt text](images/MenuModeloLogico.JPG?raw=true "Menú Modelo Lógico")
    
   * **Entidad**
   
-    Una entidad es un objeto o concepto del que se quiere almacenar cierta información.  Una entidad está compuesta por un conjunto de atributos de los cuales uno de ellos debe ser el identificador único o llave de la entidad.
-    Una entidad finalmente es mapeada a una tabla del modelo relacional. 
-    Para crear una entidad se debe hacer clic en la opción de *Nueva Entidad* del menú de herramientas del modelo lógico y luego hacer clic sobre cualquier lugar del editor, esto abrirá la siguiente pantalla.
-
-    [//]: # (No supe como abrir esta opción.  Hay un ícono de new entity pero no me abre un menú textual sino que me permite hacer un dibujo en el lienzo y después ya se abre el menú)
+    Una entidad es un objeto o concepto del que se quiere almacenar cierta información. Una entidad está compuesta por un conjunto de atributos de los cuales uno de ellos debe ser el identificador único o llave de la entidad.
+    Una entidad finalmente es mapeada a una tabla del modelo relacional.
+    Para crear una entidad se debe hacer clic en la opción de *Nueva Entidad* del menú de herramientas del modelo lógico y luego hacer doble clic sobre cualquier lugar del editor del modelo lógico, esto abrirá la siguiente pantalla.
 
     ![Alt text](images/MenuEntidad.JPG?raw=true "Menú Entidad")
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > Como caso práctico, se sugiere realizar el modelo lógico de un sistema que desea almacenar la información de estudiantes y de sus materias matriculadas en un solo periodo académico. Para ello, ingresar `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. En las siguientes secciones se irá desarrollando dicho modelo.
+    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos.
     
   * **Atributo**
     
-    Un atributo (propiedad, campo) es una característica común de una entidad en particular. Para agregar atributos a la entidad se debe abrir la pestaña *Atributos* de la entidad, luego hacer clic en el botón '+' y llenar todos los campos requeridos como se muestra a continuación. Estos atributos son mapeados finalmente a una columna de una tabla en el modelo relacional.
-
+    Un atributo (propiedad, campo) es una característica común de una entidad en particular. Estos atributos son mapeados finalmente a una columna de una tabla en el modelo relacional.
+    Para visualizar los atributos de una entidad se debe abrir la pestaña *Atributos* de la las propiedades de la entidad, lo cual muestra una lista con los atributos y los campos de cada uno de ellos, como se muestra en la siguiente figura.
+    
     ![Alt text](images/MenuAtributo.JPG?raw=true "Menú Atributo")
 
-    Cada atributo requiere un nombre, un tipo de dato y posiblemente algunos parámetros dependiendo del tipo de dato seleccionado.
+    Para agregar un atributo a la entidad, se debe hacer clic en el botón '+' y llenar todos los campos requeridos. Cada atributo requiere un nombre, un tipo de dato y posiblemente algunos parámetros dependiendo del tipo de dato seleccionado.
     Además, datamodeler permite seleccionar si un atributo es *UID Primario* (Clave primaria de la entidad) o si es *Obligatorio*.
     Si se selecciona un atributo como UID primario, este también será obligatorio. 
     No pueden existir dos registros distintos en esta tabla con igual valor en el atributo definido como UID.
