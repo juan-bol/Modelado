@@ -16,10 +16,11 @@
 <normalForm>Third</normalForm>
 <shortName>ESTUD</shortName>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ESTUDIANTE_ID" id="BCEF9DB6-B411-F83B-3F33-E8B45C92F7A9">
+<Attribute name="ID_ESTUDIANTE" id="BCEF9DB6-B411-F83B-3F33-E8B45C92F7A9">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-09 23:02:13 UTC</createdTime>
-<comment>Identificador del estudiante en el sistema</comment>
+<comment><![CDATA[Identificador del estudiante en el sistema]]></comment>
+<commentInRDBMS><![CDATA[Identificador del estudiante en el sistema]]></commentInRDBMS>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -33,7 +34,7 @@
 <Attribute name="CEDULA_ESTUDIANTE" id="681EAAAF-4F94-91AD-EEF8-80DB12CF6025">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 17:57:16 UTC</createdTime>
-<comment>Cédula del estudiante</comment>
+<comment><![CDATA[Cédula del estudiante]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -47,7 +48,7 @@
 <Attribute name="NOMBRE_ESTUDIANTE" id="80686467-F9A0-496C-6A25-5F41CFE0B752">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 18:08:59 UTC</createdTime>
-<comment>Nombre del estudiante</comment>
+<comment><![CDATA[Nombre del estudiante]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -61,7 +62,7 @@
 <Attribute name="EDAD_ESTUDIANTE" id="FE3F8639-9676-3299-8BF0-CE8E05C2AF35">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 18:10:35 UTC</createdTime>
-<comment>Edad del estudiante</comment>
+<comment><![CDATA[Edad del estudiante]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
