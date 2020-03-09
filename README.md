@@ -84,23 +84,27 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 
     Finalmente se selecciona la opción UIDPrimario para definir a este atributo como el identificador de la entidad.
 
-    Existen atributos que pueden ser únicos pero no necesariamente obligatorios. *Pregunta: peroson claves? o tampoco?*.  Por ejemplo, el número de documento de identificación nacional (cédula) de un estudiante el cual es un atributo único para el sistema, pero no primario *Pregunta: único y/o obligatorio?*. 
-    Para agregar un identificador único se deben seguir los siguentes pasos que vamos a explicar con el ejemplo ilustrado en la figura *X*.
-    Primero se crea el atributo llenando el formulario del ejemplo anterior.  
-    Para crear el atributo  `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR*.
-    El tipo de origen  *VARCHAR*  depliega los campos *Tamaño y Unidades* que quieren decir *completar*
-    Digite  `10` como tamaño y seleccione  *CHAR* en las unidades.  De esta forma,  estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
-    A continuación abra la pestaña *Identificadores Únicos* del frame de la izquierda.  En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya el identificador primario previamente agregado. 
-    *Para hacer... lo que se quiera hacer con esta explicación* se debe .... Revisa esta explicación porque no pude seguir las instrucciones.
-    Seleccionar la opción '+' y hacer doble clic en el nuevo item que se agregó a la lista, lo cual despliega un submenú donde se debe agregar el atributo al identificador único haciendo clic sobre este y posteriormente en la flecha derecha, mostrando lo siguiente.
+    Existen atributos que pueden ser únicos pero no necesariamente primarios. Por ejemplo, el número de documento de identificación nacional (cédula) de un estudiante es un atributo único para el sistema, y a su vez, es obligatatio pero no primario ya que hemos definido ya otro atributo como el identificador de la entidad.
+
+    Para agregar un identificador único se deben seguir los siguentes pasos que vamos a explicar con el ejemplo ilustrado en la siguiente figura.
 
     ![Alt text](images/EstudianteCedula.JPG?raw=true "Cedula Estudiante")
 
-    En este momento el nuevo identificador único ya ha sido creado con un nombre por defecto, en este caso es "Key_2", para cambiarlo dirigirse a la pestaña *General* sobre este mismo submenú. 
+    Primero se crea el atributo llenando el formulario del ejemplo anterior. Para crear el atributo `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR*.
+    El tipo de origen *VARCHAR*  depliega los campos *Tamaño y Unidades*.
+    Digite `10` como tamaño y seleccione  *CHAR* en las unidades. De esta forma, estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
+
+    A continuación, abra la pestaña *Identificadores Únicos* del frame de la izquierda. En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya una clave única con nombre es "Estudiante PK" la cual hace referencia a la clave primaria previamente agregada.
+    Para agregar el atributo de cédula como una clave única se debe seleccionar la opción '+' y hacer doble clic en el nuevo item que se agregó a la lista el cual tiene por defecto el nombre de "Key 2", esto despliega un submenú donde se debe definir cuáles atributos harán parte de esta nueva clave única de la entidad.
+    Para agregar la cédula, se debe hacer clic sobre este atributo y posteriormente hacer clic en la flecha derecha, esto debe verse como lo muestra la siguiente figura.
+
+    ![Alt text](images/EstudianteCedulaUnica.JPG?raw=true "Cedula Estudiante Unica")
+
+    En este momento el nuevo identificador único ya ha sido creado con el nombre "Key_2", para cambiarlo dirigirse a la pestaña *General* sobre este mismo submenú. 
     
     > Ahora, usted deberá agregar dos nuevos atributos a la entidad `ESTUDIANTE`.  Estos atributos permiten al sistema almacenar el nombre y la edad de los estudiantes, el nombre debe ser obligatorio mientras que la edad no.
 
-    La figura *X* muestra el resultado final. En la entidad se puede apreciar que datamodeler utiliza el símbolo '#' para representar identificadores primarios, la 'U' para los atributos únicos, el '*' para los atributos obligatorios y la 'o' para los atributos opcionales.
+    La siguiente figura muestra el resultado final. En la entidad se puede apreciar que datamodeler utiliza el símbolo '#' para representar identificadores primarios, la 'U' para los atributos únicos, el '*' para los atributos obligatorios y la 'o' para los atributos opcionales.
 
     ![Alt text](images/EstudianteEntidad.JPG?raw=true "Entidad Estudiante")
 
@@ -118,7 +122,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 
     > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad Profesor se espera tener lo siguiente.
 
-    ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Entidades Estudiante, Materia y Profesor")
+    ![Alt text](images/ProfesorAgregado.JPG?raw=true "Entidades Profesor")
 
     A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión mediante la opción *Nueva Relación 1:N*. Al finalizar lo anterior, se obtiene lo siguiente.
 
