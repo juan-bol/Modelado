@@ -68,25 +68,32 @@ Al finalizar la guía, se espera que los estudiantes se encuentre en la capacida
     Si se selecciona un atributo como UID primario, este también será obligatorio. 
     No pueden existir dos registros distintos en esta tabla con igual valor en el atributo definido como UID.
 
-    A continuación se muestra un ejemplo de cómo se llenan los campos de un atributo llamado `ESTUDIANTE_ID` que es también la llave primaria de la entidad `ESTUDIANTE`. La figura X ilustra este ejemplo.
-    Primero, nombre y logic porque.... completar
-    Segundo, tipo de origen, numeric porque...
-    Tercero, opciones extra.  Supongamos que se desea  Como se desea almacenar alrededor de mil estudiantes.  Entonces la precisión es `4`  y la escala `0` porque una precisión de 4  con una escala de  de 0 permiten un máximo valor de 9999 sin cifras decimales.
-
-    Finalmente se selecciona la opción UIDPrimario 
-    Para agregar la clave primaria de la entidad Estudiante, ingresar en nombre `ESTUDIANTE_ID`, seleccionar la opción *Lógico* como tipo de dato y *NUMERIC* como tipo de origen, esto desplegará dos nuevas opciones las cuales son la *Precisión y Escala* del atributo. Este tipo de dato permite almacenar tanto números enteros como fraccionales, la precisión es el número total de dígitos desde el dígito más signficativo hasta el menos significativo, mientras que la escala es el número de dígitos desde la coma hacia el dígito menos significativo. 
+    A continuación se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguient efigura ilustra este ejemplo. 
 
     ![Alt text](images/EstudianteID.JPG?raw=true "ID Estudiante")
     
-   Existen atributos que pueden ser únicos pero no necesariamente obligatorios. *Pregunta: peroson claves? o tampoco?*.  Por ejemplo, el número de documento de identificación nacional (cédula) de un estudiante el cual es un atributo único para el sistema, pero no primario *Pregunta: único y/o obligatorio?*. 
-   Para agregar un identificador único se deben seguir los siguentes pasos que vamos a explicar con el ejemplo ilustrado en la figura *X*.
-   Primero se crea el atributo llenando el formulario del ejemplo anterior.  
-   Para crear el atributo  `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR*.
-   El tipo de origen  *VARCHAR*  depliega los campos *Tamaño y Unidades* que quieren decir *completar*
-   Digite  `10` como tamaño y seleccione  *CHAR* en las unidades.  De esta forma,  estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
-   A continuación abra la pestaña *Identificadores Únicos* del frame de la izquierda.  En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya el identificador primario previamente agregado. 
-   *Para hacer... lo que se quiera hacer con esta explicación* se debe .... Revisa esta explicación porque no pude seguir las instrucciones.
-   Seleccionar la opción '+' y hacer doble clic en el nuevo item que se agregó a la lista, lo cual despliega un submenú donde se debe agregar el atributo al identificador único haciendo clic sobre este y posteriormente en la flecha derecha, mostrando lo siguiente.
+    Los campos necesarios para un atributo son los siguientes:
+
+    * *Nombre*: Es el nombre del atributo, este debe ser lo más claro y completo posible. Como se desea agregar el identificador de la entidad Estudiante se sugiere ingresar `ID_ESTUDIANTE`.
+
+    * *Tipo de Dato*: Permite especificarle al atributo un dominio, un tipo lógico, dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta. Sin embargo, como a cada dominio se le debe seleccionar finalmente un tipo lógico y buscando una mayor simplicidad para el desarrollo de esta guía, no se usarán los dominios y solo se usarán los tipos lógicos. Seleccionar *Lógico* tipo de dato de la entidad. 
+
+    * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric,VARCHAR, entre otros*. El tipo de dato lógico sugerido para un identificador es numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccionar *Numeric* como tipo de origen del atributo. Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
+    
+    Al seleccionar el tipo de origen se puede observar que se habilitan nuevos campos dependiendo del tipo de origen que se seleccione, en este caso al seleccionar *Numeric* se habilitan las opciones *Presición y Escala*. Este tipo de dato permite almacenar tanto números enteros como fraccionales, la precisión es el número total de dígitos desde el dígito más signficativo hasta el menos significativo, mientras que la escala es el número de dígitos desde la coma hacia el dígito menos significativo. 
+    Supongamos que se desea  Como se desea almacenar alrededor de mil estudiantes.  Entonces la precisión es `4`  y la escala `0` porque esta precisión y escala permiten un máximo valor de 9999 sin cifras decimales.
+
+    Finalmente se selecciona la opción UIDPrimario para definir a este atributo como el identificador de la entidad.
+
+    Existen atributos que pueden ser únicos pero no necesariamente obligatorios. *Pregunta: peroson claves? o tampoco?*.  Por ejemplo, el número de documento de identificación nacional (cédula) de un estudiante el cual es un atributo único para el sistema, pero no primario *Pregunta: único y/o obligatorio?*. 
+    Para agregar un identificador único se deben seguir los siguentes pasos que vamos a explicar con el ejemplo ilustrado en la figura *X*.
+    Primero se crea el atributo llenando el formulario del ejemplo anterior.  
+    Para crear el atributo  `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR*.
+    El tipo de origen  *VARCHAR*  depliega los campos *Tamaño y Unidades* que quieren decir *completar*
+    Digite  `10` como tamaño y seleccione  *CHAR* en las unidades.  De esta forma,  estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
+    A continuación abra la pestaña *Identificadores Únicos* del frame de la izquierda.  En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya el identificador primario previamente agregado. 
+    *Para hacer... lo que se quiera hacer con esta explicación* se debe .... Revisa esta explicación porque no pude seguir las instrucciones.
+    Seleccionar la opción '+' y hacer doble clic en el nuevo item que se agregó a la lista, lo cual despliega un submenú donde se debe agregar el atributo al identificador único haciendo clic sobre este y posteriormente en la flecha derecha, mostrando lo siguiente.
 
     ![Alt text](images/EstudianteCedula.JPG?raw=true "Cedula Estudiante")
 
