@@ -94,13 +94,14 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
     El tipo de origen *VARCHAR*  depliega los campos *Tamaño y Unidades*.
     Digite `10` como tamaño y seleccione  *CHAR* en las unidades. De esta forma, estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
 
-    A continuación, abra la pestaña *Identificadores Únicos* del frame de la izquierda. En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya una clave única con nombre es "Estudiante PK" la cual hace referencia a la clave primaria previamente agregada.
-    Para agregar el atributo de cédula como una clave única se debe seleccionar la opción '+' y hacer doble clic en el nuevo item que se agregó a la lista el cual tiene por defecto el nombre de "Key 2", esto despliega un submenú donde se debe definir cuáles atributos harán parte de esta nueva clave única de la entidad.
-    Para agregar la cédula, se debe hacer clic sobre este atributo y posteriormente hacer clic en la flecha derecha, esto debe verse como lo muestra la siguiente figura.
+    A continuación, abra la pestaña *Identificadores Únicos* del frame de la izquierda. En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya una clave única con nombre es "Estudiante PK" la cual hace referencia a la clave primaria previamente agregada, es decir, al atributido identificador.
+    Para crear una nueva clave única se debe seleccionar la opción '+', esto genera un nuevo item en la lista de claves únicas el cual tendrá por defecto el nombre de "Key 2", al hacer doble clic sobre este item se despliega un submenú donde se debe definir cuáles atributos harán parte de esta nueva clave única de la entidad.
+    Para agregar el atributo de cédula a esta nueva clave única, se debe hacer clic sobre este atributo y posteriormente hacer clic en la flecha derecha, moviendolo de la lista de la izquierda a la lista de la derecha, esto finalmente debe verse como lo muestra la siguiente figura. 
+    Aplicar los cambios.
 
     ![Alt text](images/EstudianteCedulaUnica.JPG?raw=true "Cedula Estudiante Unica")
 
-    En este momento el nuevo identificador único ya ha sido creado con el nombre "Key_2", para cambiarlo dirigirse a la pestaña *General* sobre este mismo submenú. 
+    En este momento el nuevo identificador único ya ha sido creado con el nombre "Key_2", para cambiarlo dirigirse a la pestaña *General* sobre este mismo submenú. Se sugiere el nombre de `CEDULA_UK`.
     
     > Ahora, usted deberá agregar dos nuevos atributos a la entidad `ESTUDIANTE`.  Estos atributos permiten al sistema almacenar el nombre y la edad de los estudiantes, el nombre debe ser obligatorio mientras que la edad no.
 
@@ -110,31 +111,64 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 
   * **Relación**
 
-    Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad existe una cardinalidad. La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). Una relación puede ser identificante o no, una relación identificante finalmente es mapeada al identificador primario de la entidad destino.
+    Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad de la relación existe una cardinalidad.La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). 
+    Una relación puede ser identificante o no. Las relaciones identificantes finalmente son mapeada al identificador primario de la entidad destino.
 
-    > Se pide al estudiante que cree una nueva entidad para que el sistema pueda almacenar las materias que el estudiante podrá matricular, una materia tiene su identificador, un nombre y un número de creditos, siendo todos estos obligatorios. Una vez hecho esto se espera tener lo siguiente:
+    > Se pide al estudiante que cree una nueva entidad para que el sistema pueda almacenar las materias que el estudiante podrá matricular, una materia tiene su identificador, un nombre y un número de creditos, siendo todos estos obligatorios. La siguiente figura ilustra el cómo debería verse la entidad `MATERIA`.
 
     ![Alt text](images/EstudianteMateria.JPG?raw=true "Entidades Estudiante y Materia")
 
-    El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M. Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino, abriendo de esta manera un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`, por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia observando lo siguiente.
+    El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M.
+    Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino, abriendo de esta manera un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
 
     ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Relación Estudiante y Materia")
 
-    > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad Profesor se espera tener lo siguiente.
+    > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad `PROFESOR` se espera tener lo siguiente.
 
     ![Alt text](images/ProfesorAgregado.JPG?raw=true "Entidades Profesor")
 
-    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión mediante la opción *Nueva Relación 1:N*. Al finalizar lo anterior, se obtiene lo siguiente.
+    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizr esto, se espera tener lo siguiente.
 
     ![Alt text](images/ModeloCompleto.JPG?raw=true "Relación Profesor y Materia")
 
-    Observe que al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar, este hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este nuevo atributo se convierte en una clave primaria que siempre apuntará a algún registro de la otra entidad.
+    Observe que al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar, este hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este nuevo atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
 
+    ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
 
-4. Guardar (exportar) un proyecto en un archivo *.dmd*
+4. **Guardar(exportar) un proyecto**
+    
+    Para guardar un proyecto se debe hacer clic en la opción *Guardar como...* del menú *Archivo*, esto despliega el submenú que se ilustra en la siguiente figura.
+
+    ![Alt text](images/Guardar.JPG?raw=true "Guardar como...")
+
+    Observe que en el campo del nombre del archivo se encuentra por defecto el caracter `/`, este debe borrarse para poder ingresar el nombre deseado del proyecto. Por ejemplo, si queremos que el proyecto tenga como nombre `guia`, en el campo se debe ingresar exactamente la palabra `guia` y no `/guia`, ya que este último genera errores al guardar. Hacer clic sobre la opción *Guardar*.
+
+    Si desea asegurarse de que el proceso de guardado ha sido realizado con éxito y sin ningún tipo de error, puede observar en la pestaña *Mensajes - Log* en la parte inferior de la pantalla donde el programa imprime cada uno de las acciones realizadas. 
+    La siguiente figura ilustra un ejemplo de los mensajes que deberían salir al  guardar correctamente el proyecto `guia`, aquí también se puede observar la ruta donde el proyecto fue guardado. Si esta pestaña no se encuentra visible hacer clic en la opción *Log* del menú *Ver*.
+
+    ![Alt text](images/GuardarLogs.JPG?raw=true "Guardar Logs")
+
+    El proceso de guardado genera una carpeta y un archivo, ambos con el nombre ingresado. En este caso, en la ruta seleccionada se crean una carpeta con nombre *guia* y un archivo llamado *guia.dmd*, tal como se ilustra en la siguiente figura.
+
+    ![Alt text](images/Archivos.JPG?raw=true "Archivos")
+
+    En la carpeta *guia* se encuentran todos los archivos necesarios para el proyecto, que en conjunto generan todo el diseño realizado. Por otro lado, el archivo *guia.dmd* es un archivo propio de Oracle, más precisamente de SQL Developer Data Modeler, en este se almacena la estructura de los datos y sus relaciones para poder ser visualizadas por la herramienta. Ambos son necesarios.
+
+5. **Abrir(importar) un proyecto**
+
+    Para abrir un proyecto, solo es necesario hacer clic en la opción *Abrir* del *Menú* y seleccionar el archivo con extensión *.dmd*, este debe estar en la mismo directorio que la carpeta que se generó al momento de guardar el proyecto. 
+    Por ejemplo, si queremos abrir el proyecto de la presente guía, se debe seleccionar el archivo *guia.dmd*, el cual debe estar en la mismo directorio de la carpeta *guia*.
+    Esto abrirá un submenú en el que se solicita seleccionar los modelos relacionales asociados al proyecto, dado a que por el momento solo se tiene el modelo relacional que el programa genera por defecto, se procede a hacer clic en *Aceptar*.
+
+    Si desea asegurarse de que el proyecto fue abierto correctamente se puede observar la pestaña logs del programa donde se esperaría ver lo que se muestra en la siguiente figura.
+
+    ![Alt text](images/AbrirLogs.JPG?raw=true "Abrir Logs")
    
-5. Subvista como gestión de entidades
+6. **Subvista como gestión de entidades**
+
+    (No estoy muy seguro si explicar esto en esta guía)
    
-6. Ingeniería a un modelo Relacional
-   
-7. Generación automática de un script *.ddl*
+7. **Modelo Relacional**
+    
+  
+8. Generación automática de un script *.ddl*

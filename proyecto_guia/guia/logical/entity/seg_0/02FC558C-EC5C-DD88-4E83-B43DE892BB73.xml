@@ -16,10 +16,10 @@
 <normalForm>Third</normalForm>
 <shortName>MAT</shortName>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="MATERIA_ID" id="405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A">
+<Attribute name="ID_MATERIA" id="405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:36:26 UTC</createdTime>
-<comment>Identificador de la materia en el sistema</comment>
+<comment><![CDATA[Identificador de la materia en el sistema]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -33,7 +33,7 @@
 <Attribute name="NOMBRE_MATERIA" id="0D3560D3-6437-84DB-619B-8B7323F0CFF9">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:37:01 UTC</createdTime>
-<comment>Nombre de la materia</comment>
+<comment><![CDATA[Nombre de la materia]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -47,7 +47,7 @@
 <Attribute name="NUMERO_CREDITOS" id="E8575B52-F566-876B-B758-B5BC34436EDA">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:37:35 UTC</createdTime>
-<comment>Número de créditos de la materia</comment>
+<comment><![CDATA[Número de créditos de la materia]]></comment>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
@@ -58,10 +58,10 @@
 <dataTypePrecision>2</dataTypePrecision>
 <ownDataTypeParameters>,2,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="PROFESOR_ID" id="A818F36E-6EB1-B310-85FE-C89F6DFAB152">
+<Attribute name="ID_PROFESOR" id="A818F36E-6EB1-B310-85FE-C89F6DFAB152">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 21:03:33 UTC</createdTime>
-<comment>Identificador el profesor en el sistema</comment>
+<comment><![CDATA[Identificador el profesor en el sistema]]></comment>
 <generatorID>318999FD-EAC4-D101-FC57-0E0058F8071E</generatorID>
 <ownerDesignName>guia</ownerDesignName>
 <engineerTo>
@@ -73,7 +73,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
