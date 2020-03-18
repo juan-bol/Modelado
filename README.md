@@ -7,7 +7,12 @@ Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado 
 Datamodeler es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
 Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
 
-> Como caso práctico, se sugiere realizar el modelo lógico de un sistema de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan. Este modelo se irá desarrollando a medida que se explican cada uno de los conceptos necesarios.
+> Como caso práctico, se sugiere realizar el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
+El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
+
+![Alt text](images/Diagrama.JPG?raw=true "Diagrama E/R") 
+
+Esta guía permite que el estudiante comprenda la representación de un modelo E/R bajo la notación propuesta por Peter Chen, en un modelo lógico del sistema de gestión de base de datos de Oracle Database. Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
 
 
 1. **Instalación**
@@ -53,7 +58,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos.
+    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos. 
     
   * **Atributo**
     
@@ -109,31 +114,48 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 
     ![Alt text](images/EstudianteEntidad.JPG?raw=true "Entidad Estudiante")
 
+    Esta entidad en notación de Chen estaría representada por el siguiente diagrama. Observe que la entidad del modelo lógico de Oracle contiene mucha más información que la brindada por en el modelo en notación de Chen, como lo es la obligatoriedad de cada atributo o sus tipos de datos.
+
+    ![Alt text](images/DiagramaEstudiante.JPG?raw=true "Entidad Estudiante")
+
   * **Relación**
 
-    Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad de la relación existe una cardinalidad.La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). 
+    Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad de la relación existe una cardinalidad. La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). 
     Una relación puede ser identificante o no. Las relaciones identificantes finalmente son mapeada al identificador primario de la entidad destino.
 
     > Se pide al estudiante que cree una nueva entidad para que el sistema pueda almacenar las materias que el estudiante podrá matricular, una materia tiene su identificador, un nombre y un número de creditos, siendo todos estos obligatorios. La siguiente figura ilustra el cómo debería verse la entidad `MATERIA`.
 
     ![Alt text](images/EstudianteMateria.JPG?raw=true "Entidades Estudiante y Materia")
 
-    El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M.
+    Ambas entidades en notación de Chen estarían representadas por el siguiente diagrama.
+
+    ![Alt text](images/DiagramaEstudianteMateria.JPG?raw=true "Diagrama E/R Estudiante y Materia")
+
+    Observe que, al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar.
+    Este nuevo atributo hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
+
+    ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
+
+    Ahora vamos a crear la relación. El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M.
     Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino, abriendo de esta manera un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
 
     ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Relación Estudiante y Materia")
+
+    Esta relación, en notación de Chen estaría representada por el siguiente diagrama.
+
+    ![Alt text](images/DiagramaRelacionEstudMateria.JPG?raw=true "Diagrama E/R Relación Estudiante y Materia")
 
     > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad `PROFESOR` se espera tener lo siguiente.
 
     ![Alt text](images/ProfesorAgregado.JPG?raw=true "Entidades Profesor")
 
-    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizr esto, se espera tener lo siguiente.
+    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizar esto, se espera tener lo siguiente.
 
     ![Alt text](images/ModeloCompleto.JPG?raw=true "Relación Profesor y Materia")
 
-    Observe que al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar, este hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este nuevo atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
+    Finalmente, hemos terminado de pasar el modelo E/R en notación de Chen, ilustrado en la siguiente figura, a un modelo lógico de Oracle listo para ser implementado.
 
-    ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
+    ![Alt text](images/Diagrama.JPG?raw=true "Clave foránea de Profesor en Materia")
 
 4. **Guardar(exportar) un proyecto**
     
