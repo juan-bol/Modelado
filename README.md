@@ -10,7 +10,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 > Como caso práctico, se sugiere realizar el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
 El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
 
-![Alt text](images/Diagrama.JPG?raw=true "Diagrama E/R") 
+![Alt text](images/Diagrama.jpg?raw=true "Diagrama E/R") 
 
 Esta guía permite que el estudiante comprenda la representación de un modelo E/R bajo la notación propuesta por Peter Chen, en un modelo lógico del sistema de gestión de base de datos de Oracle Database. Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
 
@@ -116,7 +116,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     Esta entidad en notación de Chen estaría representada por el siguiente diagrama. Observe que la entidad del modelo lógico de Oracle contiene mucha más información que la brindada por en el modelo en notación de Chen, como lo es la obligatoriedad de cada atributo o sus tipos de datos.
 
-    ![Alt text](images/DiagramaEstudiante.JPG?raw=true "Entidad Estudiante")
+    ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante")
 
   * **Relación**
 
@@ -129,7 +129,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     Ambas entidades en notación de Chen estarían representadas por el siguiente diagrama.
 
-    ![Alt text](images/DiagramaEstudianteMateria.JPG?raw=true "Diagrama E/R Estudiante y Materia")
+    ![Alt text](images/DiagramaEstudianteMateria.jpg?raw=true "Diagrama E/R Estudiante y Materia")
 
     Observe que, al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar.
     Este nuevo atributo hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
@@ -143,7 +143,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     Esta relación, en notación de Chen estaría representada por el siguiente diagrama.
 
-    ![Alt text](images/DiagramaRelacionEstudMateria.JPG?raw=true "Diagrama E/R Relación Estudiante y Materia")
+    ![Alt text](images/DiagramaRelacionEstudMateria.jpg?raw=true "Diagrama E/R Relación Estudiante y Materia")
 
     > Se pide ahora al estudiante que cree una nueva entidad que le permita al sistema almacenar los profesores para poder registrar las materias que estos imparten, se sabe que una materia es impartida por un solo profesor, del profesor se solicita almancenar su nombre y fecha en la que ingresó al sistema. Una vez creada la entidad `PROFESOR` se espera tener lo siguiente.
 
@@ -155,7 +155,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     Finalmente, hemos terminado de pasar el modelo E/R en notación de Chen, ilustrado en la siguiente figura, a un modelo lógico de Oracle listo para ser implementado.
 
-    ![Alt text](images/Diagrama.JPG?raw=true "Clave foránea de Profesor en Materia")
+    ![Alt text](images/Diagrama.jpg?raw=true "Clave foránea de Profesor en Materia")
 
 4. **Guardar(exportar) un proyecto**
     
