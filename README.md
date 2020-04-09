@@ -6,14 +6,16 @@
 Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler, una herramienta que asiste el diseño lógico de una base de datos (i.e., creación de modelo conceptual y el esquema de la base de datos)
 
 Las instrucciones de este tutorial se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
-Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
+Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un script DDL para la creación de una base de datos.
 
-> Como caso práctico, se sugiere realizar el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
+Esta guía permite que el estudiante represente usando la notación pata de gallina,  un modelo E/R originalmente especificado en la notación propuesta por Peter Chen.  Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
+
+> Como caso práctico, se seguirá paso a paso el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
 El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
 
 ![Alt text](images/Diagrama.jpg?raw=true "Diagrama E/R") 
 
-Esta guía permite que el estudiante comprenda la representación de un modelo E/R bajo la notación propuesta por Peter Chen, en un modelo lógico del sistema de gestión de base de datos de Oracle Database. Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
+
 
 
 1. **Instalación**
@@ -59,7 +61,8 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos. 
+    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos.
+    ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante") 
     
   * **Atributo**
     
