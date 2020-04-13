@@ -301,7 +301,7 @@
 		<engineer_coordinates value="true"/>
 		<engineer_generated value="true"/>
 		<show_engineering_intree value="false"/>
-		<apply_naming_std value="true"/>
+		<apply_naming_std value="false"/>
 		<use_pref_abbreviation value="true"/>
 		<upload_directory value=""/>
 		<date_format value="YYYY/MM/DD HH24:MI:SS"/>

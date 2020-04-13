@@ -1,0 +1,65 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CC3B7910-4E55-F87D-26DD-26CB21F31969" name="PROFESOR">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<generatorID>FDC91E35-D479-A0E6-DFDC-0B4A0736E4D6</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<abbreviation>PROFE</abbreviation>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID_PROFESOR" id="2329E066-B95E-55E9-6A21-D4EEBBB0DBBF">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<comment><![CDATA[Identificador el profesor en el sistema]]></comment>
+<generatorID>6D85C679-0C46-4241-07F3-5EE1B90E09D1</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE_PROFESOR" id="FCD9AEA5-EAE0-DDA9-155F-8DE1A75E1348">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<comment><![CDATA[Nombre del profesor]]></comment>
+<generatorID>E6239E58-1CEA-EA2C-0F4D-43E846B0C461</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA_INGRESO" id="CF63B321-205E-6B14-0B52-ED840B3A62E5">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<comment><![CDATA[Fecha en que el profesor ingresó al sistema]]></comment>
+<generatorID>544D4E9D-F9A3-F0FC-FE75-D2C664AA273A</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6F3E28F7-86E5-DCFF-96F7-0A447E900238" name="PROFESOR_PK">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<generatorID>1D140CCF-A094-3A1C-14C3-823B3557CC91</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2329E066-B95E-55E9-6A21-D4EEBBB0DBBF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

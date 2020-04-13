@@ -206,11 +206,44 @@ El modelo Entidad-Relación (E/R) completo que da solución al anterior caso es 
 
     ![Alt text](images/AbrirLogs.JPG?raw=true "Abrir Logs")
    
-6. **Subvista como gestión de entidades**
-
-    (No estoy muy seguro si explicar esto en esta guía)
    
-7. **Modelo Relacional**
-    
+6. **Modelo Relacional**
+
+    El modelo relacional consta de un conjunto de tablas que reflejan las entidades del modelol lógico y todos los atributos de cada entidad.
+    En el modelo de datos de este tutorial, un solo modelo relacional reflejará todo el modelo lógico; sin embargo, para otros modelos de datos más complejos, se pueden crear uno o más modelos relacionales, cada uno de los cuales refleja todo o un subconjunto del modelo lógico. La estructura de un modelo lógico es la siguiente.
+
+    ![Alt text](images/EstructuraRelacional.JPG?raw=true "Estructura Modelo Relacional")
+
+    Datamodeler permite generar automáticamente un modelo relacional partiendo de un modelo lógico, esto se puede realizar haciendo clic en la opción de *Realizar Ingeniería a Modelo Relacional* en el menú de herramientas del modelo lógico, esta opción se ilustra a continaución.
+
+    ![Alt text](images/OpcionIngenieria.JPG?raw=true "Realizar Ingeniería")
+
+    Al hacer clic en la anterior opción, se despliega un menú donde se debe seleccionar qué elementos del modelo lógico se desean convertir a un modelo relacional, por defecto todo el modelo lógico se encuentra seleccionado, asegurarse de no seleccionar la opción *Aplicar Traducción de Nombre*. Esta confiruación se debe ver de la siguiente forma.
+
+    ![Alt text](images/Ingenieria.JPG?raw=true "Opciones Ingeniería")
+
+    Haga clic en *Realizar Ingeniería* para que se genere automáticamente el modelo relacional. Dado a que esta transformación genera un modelo ralacional cuyas tablas pueden quedar desorganizadas o sobrepuestas, si lo desea puede hacer clic derecho sobre cada tabla y luego hacer clic izquierdo en la opción *Cambiar Tamaño para Hacer Visible*.
+    Adicionalmente, hacer clic derecho sobre el lienzo del modelo relacional, luego clic izquierdo en *Diseño*, *Diseño automático* y finalmente seleccione alguno de los diseños que ahí se listan. El modelo relacional resultante debe quedar como se muestra en la siguiente figura.
+
+    ![Alt text](images/ModeloRelacional.JPG?raw=true "Modelo Relacional")
+
+    Como se puede observar, se han creado cuatro tablas en el modelo relacional provenientes de tres entidades del modelo lógico. Para cada entidad se ha creado una tabla, sin embargo, se ha generado una tabla con nombre *ESTUDIANTE_MATERIA* la cual representa la relación de muchos a muchos entre las entidades Estudiante y Materia. A continuación, se revisarán estas tablas generadas, iniciando con la tabla Estudiante.
+
+    ![Alt text](images/TablaEstudiante.JPG?raw=true "Tabla Estudiante")
+
+    La tabla Estudiante cuenta con las columnas que representan los atributos con los que se creó su entidad en el modelo lógico, como se puede observar, la clave primaria se representa por una `P` en la columna. Bajo las columnas se encuentran las *Claves Primarias*, *Claves Ajenas* y *Restricciones de Clave Única*, en la tabla Estudiante se puede observar `ID_ESTUDIANTE` como su clave primeria y la la clave única generada anteriormente que apunta a `CEDULA_ESTUDIANTE`.
+
+    ![Alt text](images/TablaMateria.JPG?raw=true "Tabla Materia")
+
+    En la tabla Materia, se puede observar que al final se encuentra una clave foránea que apunta a la clave primaria de la tabla Profesor, es decir, a su identificador. La clave foránea se representa por una `F` en la columna.
+    La tabla profesor cuenta únicamente con sus columnas y su clave primaria. Por otro lado, a continuación, se muestra la tabla *ESTUDIANTE_MATERIA*.
+
+    ![Alt text](images/TablaEstudianteMateria.JPG?raw=true "Tabla Estudiante_Materia")
+
+    En la anterior tabla, se puede observar que existen dos claves foráneas y una clave primaria, así como dos columnas. Las claves foráneas hacen referencia a las claves primarias de las tablas en cuestión, es decir, de Estudiante y Materia, siendo estas `ESTUDIANTE_ID` y `MATERIA_ID` respectivamente.
+    La clave primaria en esta tabla es una clave compuesta por sus dos claves foráneas, esto quiere decir que un registro de esta tabla requiere y debe apuntar a una clave primaria de un registro tanto de la tabla Estudiante como de la tabla Materia. Estas columnas se representan mediante `PF`.
+   
   
-8. Generación automática de un script *.ddl*
+7. **Generación automática de un script *.ddl***
+
+    

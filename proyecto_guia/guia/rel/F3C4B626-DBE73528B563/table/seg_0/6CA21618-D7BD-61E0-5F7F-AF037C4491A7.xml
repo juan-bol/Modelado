@@ -9,10 +9,10 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="MATERIA_ID" id="040B010D-AD86-5384-9554-CFD24C3DA4EC">
+<Column name="ID_MATERIA" id="040B010D-AD86-5384-9554-CFD24C3DA4EC">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:42:24 UTC</createdTime>
-<comment>Identificador de la materia en el sistema</comment>
+<comment><![CDATA[Identificador de la materia en el sistema]]></comment>
 <generatorID>405699A8-17BD-F5FE-1ABF-8C50B4F6DD0A</generatorID>
 <ownerDesignName>guia</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -25,7 +25,7 @@
 <Column name="NOMBRE_MATERIA" id="BB1AE8DE-DD80-B3C7-AC77-744151C08F92">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:42:24 UTC</createdTime>
-<comment>Nombre de la materia</comment>
+<comment><![CDATA[Nombre de la materia]]></comment>
 <generatorID>0D3560D3-6437-84DB-619B-8B7323F0CFF9</generatorID>
 <ownerDesignName>guia</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -38,7 +38,7 @@
 <Column name="NUMERO_CREDITOS" id="F88C2168-74FC-72FA-1ABD-201FC4001FE1">
 <createdBy>juan-</createdBy>
 <createdTime>2020-02-10 19:42:24 UTC</createdTime>
-<comment>Número de créditos de la materia</comment>
+<comment><![CDATA[Número de créditos de la materia]]></comment>
 <generatorID>E8575B52-F566-876B-B758-B5BC34436EDA</generatorID>
 <ownerDesignName>guia</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -47,6 +47,23 @@
 <dataTypePrecision>2</dataTypePrecision>
 <ownDataTypeParameters>,2,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ID_PROFESOR" id="AABB27A5-46EF-77B5-FE64-64DBEC571753">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<comment><![CDATA[Identificador el profesor en el sistema]]></comment>
+<generatorID>A818F36E-6EB1-B310-85FE-C89F6DFAB152</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FC980EB6-DBA5-A456-F4A4-4B4433CC8A94" referredColumn="2329E066-B95E-55E9-6A21-D4EEBBB0DBBF"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -60,6 +77,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="040B010D-AD86-5384-9554-CFD24C3DA4EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="781CE5A0-90FB-7490-30AA-D17F73ED8E22" name="PROFESOR_MATERIA">
+<createdBy>juan-</createdBy>
+<createdTime>2020-04-13 07:36:06 UTC</createdTime>
+<generatorID>318999FD-EAC4-D101-FC57-0E0058F8071E</generatorID>
+<ownerDesignName>guia</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AABB27A5-46EF-77B5-FE64-64DBEC571753"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
