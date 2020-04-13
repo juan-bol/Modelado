@@ -241,9 +241,23 @@ El modelo Entidad-Relación (E/R) completo que da solución al anterior caso es 
     ![Alt text](images/TablaEstudianteMateria.JPG?raw=true "Tabla Estudiante_Materia")
 
     En la anterior tabla, se puede observar que existen dos claves foráneas y una clave primaria, así como dos columnas. Las claves foráneas hacen referencia a las claves primarias de las tablas en cuestión, es decir, de Estudiante y Materia, siendo estas `ESTUDIANTE_ID` y `MATERIA_ID` respectivamente.
-    La clave primaria en esta tabla es una clave compuesta por sus dos claves foráneas, esto quiere decir que un registro de esta tabla requiere y debe apuntar a una clave primaria de un registro tanto de la tabla Estudiante como de la tabla Materia. Estas columnas se representan mediante `PF`.
+    La clave primaria en esta tabla es una clave compuesta por sus dos claves foráneas, esto quiere decir que un registro de esta tabla requiere y debe apuntar a una clave primaria de un registro de la tabla Estudiante y, así mismo, a una clave primaria de un registro de la tabla Materia. Estas columnas se representan mediante `PF`.
    
   
-7. **Generación automática de un script *.ddl***
+7. **Generación automática del DDL**
 
-    
+    Datamodeler permite generar automáticamente el DDL (Data Definition Lenguage) de la base de datos en un script *.ddl* a partir de un modelo relacional. Un DDL es un conjunto de sentencias SQL de tipo *CRETE, DROP y ALTER*.
+    Para poder generar el DDL se debe hacer clic sobre la opción *Generar DDL* ubicada en el menú de herramientas del modelo relacioanl, esta opación se ilustra en la siguiente figura.
+
+    ![Alt text](images/OpcionDDL.JPG?raw=true "Opción DDL")
+
+    Una vez se hace clic sobre la anterior opción, se despliega un menú en el que se deben seleccionar el motor de la base datos Oracle a utilizar y el modelo relacional del que se quiere generar el DDL. Finalmente, hacer clic en la opción *Generar*, lo cual despliega un nuevo submenú donde el usuario puede configurar cómo quiere generar el DDL para cada sentencia.
+    Como nos interesa que el DDL sea un proceso repetible para poder restaurar continuamente la estructrua de la base de datos, es importante que este script inicie con las sentencias DROP, para ello se debe abrir la pestaña *Selección 'DROP'* en el submenú anterior y seleccionar las opciones *Tabla* y *Claves Ajenas*. Esta configuración se ilustra en la siguiente figura.
+
+    ![Alt text](images/IngenieriaDrop.JPG?raw=true "Ingeniería Drop")
+
+    Haga clic en la opción *Aceptar* para generar el DDL de la base de datos, aquí se pueden observar cada una de las sentencias necesarias para (1) eliminar las tablas, (2) crear las tablas con sus columnas claves primarias, y (3) alterar las tablas para crear las calves foráneas y relaciones entre ellas. A continuación, se muestra el DDL generado.
+
+    ![Alt text](images/DDL.JPG?raw=true "DDL")
+
+    Este DDL también cuenta con los comentarios incluidos durante el diseño y con un informe al final a manera de comentario donde se reporta el resultado del proceso. Finalmente, para guardar o exportar el DDL a un archivo *.ddl* se debe hacer clic sobre la opción *Guardar*, la cual solicita la ruta de guardado y un nombre. Haga clic en *Guardar* nuevamente y podrá ver el script generado listo para poder ser ejecutado por un motor de base de datos Oracle SQL. 
