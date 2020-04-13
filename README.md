@@ -3,16 +3,19 @@
 
 ## Introducción
 
-Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler.
-Datamodeler es una herramienta para el diseño de modelos de datos. Las instrucciones se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
-Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un scrit DDL para la creación de una base de datos.
+Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler, una herramienta que asiste el diseño lógico de una base de datos (i.e., creación de modelo conceptual y el esquema de la base de datos)
 
-> Como caso práctico, se sugiere realizar el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
+Las instrucciones de este tutorial se explicarán a través del diseño paso a paso de un ejemplo básico mientras se explican cada uno de los conceptos y componentes utilizados.
+Al finalizar la guía, se espera que los estudiantes se encuentren en la capacidad de (1) iniciar y persistir un proyecto con la herramienta; (2) diseñar un modelo Entidad-Relación entendiendo cada elemento empleado, transformar el modelo anterior a un modelo Relacional y generar un script DDL para la creación de una base de datos.
+
+Esta guía permite que el estudiante represente usando la notación pata de gallina,  un modelo E/R originalmente especificado en la notación propuesta por Peter Chen.  Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
+
+> Como caso práctico, se seguirá paso a paso el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
 El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
 
 ![Alt text](images/Diagrama.jpg?raw=true "Diagrama E/R") 
 
-Esta guía permite que el estudiante comprenda la representación de un modelo E/R bajo la notación propuesta por Peter Chen, en un modelo lógico del sistema de gestión de base de datos de Oracle Database. Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
+
 
 
 1. **Instalación**
@@ -58,7 +61,11 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? Para iniciar a diseñar dicho modelo, debemos crear nuestra primera entidad para modelar a los estudiantes. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos. 
+    > ¿Recuerdas el caso práctico enunciado al inicio de la guía?\
+    ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante")\
+
+     El primer paso para hacer el modelo usando la herramienta es crear la entidad estudiante. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos.
+    
     
   * **Atributo**
     
@@ -68,11 +75,10 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
     ![Alt text](images/MenuAtributo.JPG?raw=true "Menú Atributo")
 
     Para agregar un atributo a la entidad, se debe hacer clic en el botón '+' y llenar todos los campos requeridos. Cada atributo requiere un nombre, un tipo de dato y posiblemente algunos parámetros dependiendo del tipo de dato seleccionado.
-    Además, datamodeler permite seleccionar si un atributo es *UID Primario* (Clave primaria de la entidad) o si es *Obligatorio*.
-    Si se selecciona un atributo como UID primario, este también será obligatorio. 
-    No pueden existir dos registros distintos en esta tabla con igual valor en el atributo definido como UID.
-
-    A continuación, se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguient efigura ilustra este ejemplo. 
+    Además, datamodeler permite seleccionar si un atributo es *UID Primario* (hace parte de la llave primaria de la entidad) o si es *Obligatorio* (not null).
+    Los atributos que conforman la llave preimaria son únicos y obligatorios. 
+    
+    A continuación, se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguiente figura ilustra este ejemplo. 
 
     ![Alt text](images/EstudianteID.JPG?raw=true "ID Estudiante")
     
@@ -80,7 +86,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     * *Nombre*: Es el nombre del atributo, este debe ser lo más claro y completo posible. Como se desea agregar el identificador de la entidad Estudiante se sugiere ingresar `ID_ESTUDIANTE`.
 
-    * *Tipo de Dato*: Permite especificarle al atributo un dominio, un tipo lógico, dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta. Sin embargo, como a cada dominio se le debe seleccionar finalmente un tipo lógico y buscando una mayor simplicidad para el desarrollo de esta guía, no se usarán los dominios y solo se usarán los tipos lógicos. Seleccionar *Lógico* tipo de dato de la entidad. 
+    * *Tipo de Dato*: Permite especificarle al atributo un dominio, un tipo lógico, dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta. En este ejemplo se usarán los tipos lógicos y más adelante se explicarán los dominios. Seleccionar *Lógico* tipo de dato de la entidad. 
 
     * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric, VARCHAR, entre otros*. El tipo de dato lógico sugerido para un identificador es numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccionar *Numeric* como tipo de origen del atributo. Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
     
@@ -114,9 +120,10 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     ![Alt text](images/EstudianteEntidad.JPG?raw=true "Entidad Estudiante")
 
-    Esta entidad en notación de Chen estaría representada por el siguiente diagrama. Observe que la entidad del modelo lógico de Oracle contiene mucha más información que la brindada por en el modelo en notación de Chen, como lo es la obligatoriedad de cada atributo o sus tipos de datos.
+    Esta entidad en notación de Chen estaría representada por el siguiente diagrama.
 
-    ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante")
+    ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante")\
+    Observe que la entidad del modelo lógico de Oracle contiene más información que la brindada por en el modelo en notación de Chen, como por ejemplo la obligatoriedad de cada atributo o sus tipos de datos. Esto se debe a que el modelo E-R es un modelo conceptual y el modelo lógico de Oracle contiene información de la especificación del esquema de la base de datos.
 
   * **Relación**
 
@@ -131,13 +138,17 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     ![Alt text](images/DiagramaEstudianteMateria.jpg?raw=true "Diagrama E/R Estudiante y Materia")
 
+    **DE aquí en adelante hay un error**\
     Observe que, al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar.
     Este nuevo atributo hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
 
     ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
 
-    Ahora vamos a crear la relación. El sistema también require registrar en su base de datos las materias que están cursando los estudiantes, dado a que un estudiante puede cursar muchas materias y que una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M.
-    Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino, abriendo de esta manera un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
+    **hasta aquí**
+
+    Ahora vamos a definir una la relación. En el ejemplo, el sistema requiere registrar en su base de datos las materias que están cursando los estudiantes. Como un estudiante puede cursar muchas materias y una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M (de muchos a muchos).
+    Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino.\
+    En el ejemplo, la entidad origen es estudiante y la entidad destino es materia.  Una vez se señale las entidades, se abre un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
 
     ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Relación Estudiante y Materia")
 
@@ -149,9 +160,12 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     ![Alt text](images/ProfesorAgregado.JPG?raw=true "Entidades Profesor")
 
-    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizar esto, se espera tener lo siguiente.
+    **Aquí hay una inconsistencia, si yo dibujo la relación de materia a profesor la flecha no queda igual, para reforzar la dirección, hay que poner el nombre de la relación Origen_Destino**\
+    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizar esto, se espera tener lo siguiente.
 
     ![Alt text](images/ModeloCompleto.JPG?raw=true "Relación Profesor y Materia")
+
+    **Creo que aquí hay que explicar lo de las llaves foraneas cuando hay una relación de uno a muchos**\
 
     Finalmente, hemos terminado de pasar el modelo E/R en notación de Chen, ilustrado en la siguiente figura, a un modelo lógico de Oracle listo para ser implementado.
 
@@ -163,7 +177,7 @@ Esta guía permite que el estudiante comprenda la representación de un modelo E
 
     ![Alt text](images/Guardar.JPG?raw=true "Guardar como...")
 
-    Observe que en el campo del nombre del archivo se encuentra por defecto el caracter `/`, este debe borrarse para poder ingresar el nombre deseado del proyecto. Por ejemplo, si queremos que el proyecto tenga como nombre `guia`, en el campo se debe ingresar exactamente la palabra `guia` y no `/guia`, ya que este último genera errores al guardar. Hacer clic sobre la opción *Guardar*.
+    Observe que en el campo del nombre del archivo se encuentra por defecto el caracter `/`, este debe borrarse para poder ingresar el nombre deseado del proyecto. Por ejemplo, si queremos que el proyecto tenga como nombre `guia`, en el campo se debe ingresar exactamente la palabra `guia` y no `/guia`, ya que este último genera errores al guardar. Escoja o cree un directorio para guardar el proyecto y haga clic sobre la opción *Guardar*.
 
     Si desea asegurarse de que el proceso de guardado ha sido realizado con éxito y sin ningún tipo de error, puede observar en la pestaña *Mensajes - Log* en la parte inferior de la pantalla donde el programa imprime cada uno de las acciones realizadas. 
     La siguiente figura ilustra un ejemplo de los mensajes que deberían salir al  guardar correctamente el proyecto `guia`, aquí también se puede observar la ruta donde el proyecto fue guardado. Si esta pestaña no se encuentra visible hacer clic en la opción *Log* del menú *Ver*.
