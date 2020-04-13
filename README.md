@@ -11,7 +11,7 @@ Al finalizar la guía, se espera que los estudiantes se encuentren en la capacid
 Esta guía permite que el estudiante represente usando la notación pata de gallina,  un modelo E/R originalmente especificado en la notación propuesta por Peter Chen.  Para ello, se irán desarrollando cada uno de los elementos del modelo lógico de Oracle mientras se explican los conceptos necesarios y cómo se relacionan con cada uno de los elementos de la notación de Chen.
 
 > Como caso práctico, se seguirá paso a paso el diseño lógico de una base de datos de un instituto que desea almacenar la información de sus estudiantes y de sus materias matriculadas en un solo periodo académico, así como la información de los profesores y de las materias que estos dictan.
-El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
+El modelo Entidad-Relación (E/R) completo que da solución al anterior caso es el que se ilustra en la siguiente figura. 
 
 ![Alt text](images/Diagrama.jpg?raw=true "Diagrama E/R") 
 
@@ -55,13 +55,13 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
   
     Una entidad es un objeto o concepto del que se quiere almacenar cierta información. Una entidad está compuesta por un conjunto de atributos de los cuales uno de ellos debe ser el identificador único o llave de la entidad.
     Una entidad finalmente es mapeada a una tabla del modelo relacional.
-    Para crear una entidad se debe hacer clic en la opción de *Nueva Entidad* del menú de herramientas del modelo lógico y luego hacer doble clic sobre cualquier lugar del editor del modelo lógico, esto abrirá la siguiente pantalla.
+    Para crear una entidad se debe hacer clic en la opción de *Nueva Entidad* del menú de herramientas del modelo lógico y luego hacer clic sobre cualquier lugar del editor del modelo lógico, esto abrirá la siguiente pantalla.
 
     ![Alt text](images/MenuEntidad.JPG?raw=true "Menú Entidad")
 
     En este menú se ingresa el nombre de la entidad, su abreviatura, entre otros campos, por conveniencia los nombres de las entidades se escriben en singular. A la izquierda de este menú se pueden observar las posibles pestañas para la configuración de la entidad, entre estas se encuentran *Atributos, Identificadores únicos, Relaciones y Comentarios.*
 
-    > ¿Recuerdas el caso práctico enunciado al inicio de la guía?\
+    > ¿Recuerdas el caso práctico enunciado al inicio de la guía? el siguiente es un fragmento de este con solo la información del estudiante\
     ![Alt text](images/DiagramaEstudiante.jpg?raw=true "Entidad Estudiante")\
 
      El primer paso para hacer el modelo usando la herramienta es crear la entidad estudiante. Para ello, se debe crear una nueva entidad ingresando `ESTUDIANTE` como nombre de la entidad y `ESTUD` como abreviatura. Continuaremos ahora con sus atributos.
@@ -70,15 +70,15 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
   * **Atributo**
     
     Un atributo (propiedad, campo) es una característica común de una entidad en particular. Estos atributos son mapeados finalmente a una columna de una tabla en el modelo relacional.
-    Para visualizar los atributos de una entidad se debe abrir la pestaña *Atributos* de las propiedades de la entidad, lo cual muestra una lista con los atributos y los campos de cada uno de ellos, como se muestra en la siguiente figura.
+    Para visualizar los atributos de una entidad se debe abrir la pestaña *Atributos* en las propiedades de la entidad, lo cual muestra una lista con los atributos y los campos de cada uno de ellos, como se muestra en la siguiente figura.
     
     ![Alt text](images/MenuAtributo.JPG?raw=true "Menú Atributo")
 
     Para agregar un atributo a la entidad, se debe hacer clic en el botón '+' y llenar todos los campos requeridos. Cada atributo requiere un nombre, un tipo de dato y posiblemente algunos parámetros dependiendo del tipo de dato seleccionado.
     Además, datamodeler permite seleccionar si un atributo es *UID Primario* (hace parte de la llave primaria de la entidad) o si es *Obligatorio* (not null).
-    Los atributos que conforman la llave preimaria son únicos y obligatorios. 
+    Los atributos que conforman la llave primaria son únicos y obligatorios. 
     
-    A continuación, se muestra un ejemplo de cómo se llenan los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguiente figura ilustra este ejemplo. 
+    A continuación, se muestra un ejemplo de cómo se llenar los campos del atributo identificador de la entidad `ESTUDIANTE`, es decir, su llave primaria. La siguiente figura ilustra este ejemplo. 
 
     ![Alt text](images/EstudianteID.JPG?raw=true "ID Estudiante")
     
@@ -86,14 +86,18 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
 
     * *Nombre*: Es el nombre del atributo, este debe ser lo más claro y completo posible. Como se desea agregar el identificador de la entidad Estudiante se sugiere ingresar `ID_ESTUDIANTE`.
 
-    * *Tipo de Dato*: Permite especificarle al atributo un dominio, un tipo lógico, dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta. En este ejemplo se usarán los tipos lógicos y más adelante se explicarán los dominios. Seleccionar *Lógico* tipo de dato de la entidad. 
+    * *Tipo de Dato*: Permite especificarle al atributo un dominio o un tipo lógico, o si este es dintinto, de colección o estructurado. Un dominio describe un conjunto de posibles valores para ciertos atributos añadiendo algunas restricciones, estos pueden ser creados por la herramienta.
+    En este ejemplo se usarán los tipos lógicos y más adelante se explicarán los dominios. Seleccionar *Lógico* tipo de dato de la entidad. 
 
-    * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric, VARCHAR, entre otros*. El tipo de dato lógico sugerido para un identificador es numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccionar *Numeric* como tipo de origen del atributo. Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
+    * *Tipo de Origen*: Es la especificación del tipo de dato lógico del atributo, permite seleccionar gran variedad de tipos como lo son *Boolean, CHAR, BLOB, Datetime, Numeric, VARCHAR, entre otros*. 
+    El tipo de dato lógico sugerido para un identificador es el numérico, esto debido a que permitirá posteriormente agregarle generadores de claves secuenciales a la base de datos, así como darle un orden de acuerdo a la creación de cada registro. Seleccione *Numeric* como tipo de origen del atributo.
+    Si desea conocer más sobre los tipos de datos de Oracle se recomienda visitar la página [*docs.oracle.com*](https://docs.oracle.com/cd/B28359_01/server.111/b28318/datatype.htm#CNCPT012).
     
-    Al seleccionar el tipo de origen se puede observar que se habilitan nuevos campos dependiendo del tipo de origen que se seleccione, en este caso al seleccionar *Numeric* se habilitan las opciones *Presición y Escala*. Este tipo de dato permite almacenar tanto números enteros como fraccionales, la precisión es el número total de dígitos desde el dígito más signficativo hasta el menos significativo, mientras que la escala es el número de dígitos desde la coma hacia el dígito menos significativo. 
-    Supongamos que se desea almacenar alrededor de mil estudiantes.  Entonces la precisión es `4` y la escala `0` porque esta precisión y escala permiten un máximo valor de 9999 sin cifras decimales.
+    Al seleccionar el tipo de origen se puede observar que se habilitan nuevos campos dependiendo del tipo de origen que se seleccione, en este caso al seleccionar *Numeric* se habilitan las opciones *Presición y Escala*. 
+    Este tipo de dato permite almacenar tanto números enteros como fraccionales, la precisión es el número total de dígitos desde el dígito más signficativo hasta el menos significativo, mientras que la escala es el número de dígitos desde la coma hacia el dígito menos significativo. 
+    Supongamos que se desea almacenar alrededor de mil estudiantes.  Entonces la precisión sería `4` y la escala `0` porque esta precisión y escala permiten un máximo valor de 9999 sin cifras decimales.
 
-    Finalmente se selecciona la opción UIDPrimario para definir a este atributo como el identificador de la entidad.
+    Finalmente se selecciona la opción *UIDPrimario* para definir a este atributo como el identificador de la entidad.
 
     Existen atributos que pueden ser únicos pero no necesariamente primarios. Por ejemplo, el número de documento de identificación nacional (cédula) de un estudiante es un atributo único para el sistema, y a su vez, es obligatatio pero no primario ya que hemos definido ya otro atributo como el identificador de la entidad.
 
@@ -101,14 +105,15 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
 
     ![Alt text](images/EstudianteCedula.JPG?raw=true "Cedula Estudiante")
 
-    Primero se crea el atributo llenando el formulario del ejemplo anterior. Para crear el atributo `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR*.
+    Primero se crea el atributo llenando el formulario del ejemplo anterior. Para crear el atributo `CEDULA_ESTUDIANTE` se selecciona el tipo de origen *VARCHAR* del tipo de dato *Lógico*.
     El tipo de origen *VARCHAR*  depliega los campos *Tamaño y Unidades*.
-    Digite `10` como tamaño y seleccione  *CHAR* en las unidades. De esta forma, estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres.
+    Digite `10` como tamaño y seleccione  *CHAR* en las unidades. De esta forma, estamos declarando que la `CEDULA_ESTUDIANTE` tendrá máximo 10 caracteres. Seleccione la opción *Obligtorio* para definir que este atributo no puede ser nulo.
 
-    A continuación, abra la pestaña *Identificadores Únicos* del frame de la izquierda. En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya una clave única con nombre es "Estudiante PK" la cual hace referencia a la clave primaria previamente agregada, es decir, al atributido identificador.
+    A continuación, abra la pestaña *Identificadores Únicos* del frame de la izquierda. En esta pestaña se muestran los atributos únicos de la entidad, aquí se encuentra ya una clave única generada automáticamente con nombre "Estudiante PK", la cual hace referencia a la clave primaria previamente agregada, es decir, al atributido identificador de la entidad.
+
     Para crear una nueva clave única se debe seleccionar la opción '+', esto genera un nuevo item en la lista de claves únicas el cual tendrá por defecto el nombre de "Key 2", al hacer doble clic sobre este item se despliega un submenú donde se debe definir cuáles atributos harán parte de esta nueva clave única de la entidad.
     Para agregar el atributo de cédula a esta nueva clave única, se debe hacer clic sobre este atributo y posteriormente hacer clic en la flecha derecha, moviendolo de la lista de la izquierda a la lista de la derecha, esto finalmente debe verse como lo muestra la siguiente figura. 
-    Aplicar los cambios.
+    Aplique los cambios.
 
     ![Alt text](images/EstudianteCedulaUnica.JPG?raw=true "Cedula Estudiante Unica")
 
@@ -116,7 +121,7 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
     
     > Ahora, usted deberá agregar dos nuevos atributos a la entidad `ESTUDIANTE`.  Estos atributos permiten al sistema almacenar el nombre y la edad de los estudiantes, el nombre debe ser obligatorio mientras que la edad no.
 
-    La siguiente figura muestra el resultado final. En la entidad se puede apreciar que datamodeler utiliza el símbolo '#' para representar identificadores primarios, la 'U' para los atributos únicos, el '*' para los atributos obligatorios y la 'o' para los atributos opcionales.
+    La siguiente figura muestra el resultado final. En la entidad se puede apreciar que Datamodeler utiliza el símbolo '#' para representar identificadores primarios, la 'U' para los atributos únicos, el '*' para los atributos obligatorios y la 'o' para los atributos opcionales.
 
     ![Alt text](images/EstudianteEntidad.JPG?raw=true "Entidad Estudiante")
 
@@ -128,7 +133,7 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
   * **Relación**
 
     Una relación es una asociación que existe entre dos entidades, una de ellas denominada como entidad origen y la otra como entidad destino, para cada entidad de la relación existe una cardinalidad. La cardinalidad define el número de ocurrencias que pueden existir de la entidad destino dada una sola ocurrencia de la entidad origen. La cardinalidad puede tomar los valores de 1:1 (uno a uno), de 1:N (1 a muchos) o de N:M (muchos a muchos). 
-    Una relación puede ser identificante o no. Las relaciones identificantes finalmente son mapeada al identificador primario de la entidad destino.
+    Una relación puede ser identificante o no. Las relaciones identificantes finalmente son mapeadas al identificador primario de la entidad destino.
 
     > Se pide al estudiante que cree una nueva entidad para que el sistema pueda almacenar las materias que el estudiante podrá matricular, una materia tiene su identificador, un nombre y un número de creditos, siendo todos estos obligatorios. La siguiente figura ilustra el cómo debería verse la entidad `MATERIA`.
 
@@ -138,17 +143,15 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
 
     ![Alt text](images/DiagramaEstudianteMateria.jpg?raw=true "Diagrama E/R Estudiante y Materia")
 
-    **DE aquí en adelante hay un error**\
-    Observe que, al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, se ha generado un nuevo atributo cuyas propiedades no se pueden modificar.
-    Este nuevo atributo hace referencia al atributo primario del profesor, es decir, al identificador del profesor, por tanto este atributo se convierte en una clave primaria que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
+    Ahora vamos a crear una la relación. En el ejemplo, el sistema requiere registrar en su base de datos las materias que están cursando los estudiantes. Como un estudiante puede cursar muchas materias y una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M (de muchos a muchos).
+    Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino.
 
-    ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
+    En el ejemplo, la entidad origen es estudiante y la entidad destino es materia.  Una vez se señale las entidades, se abre un menú donde se solicita toda la información sobre la relación, ingresar `ESTUDIANTE_MATERIA` como nombre de la relación. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades.
+    Asegurarse de que las opciones *Origen Opcional* y *Destino opcional* se encuentren seleccionadas ya que esto permite definir que la relación cuenta con sus dos entidades como opcionales. La siguiente figura ilustra la realización de las anteriores instrucciones.
 
-    **hasta aquí**
+    ![Alt text](images/PropiedadesRelacionEstudMateria.JPG?raw=true "Propiedades Relación Estudiante y Materia")
 
-    Ahora vamos a definir una la relación. En el ejemplo, el sistema requiere registrar en su base de datos las materias que están cursando los estudiantes. Como un estudiante puede cursar muchas materias y una materia puede ser cursada por muchos estudiantes, la relación entre ambas entidades es N:M (de muchos a muchos).
-    Para crear una relación N:M se debe hacer clic en la opción de *Nueva Relación N:M* del menú de herramientas del modelo lógico, luego hacer clic sobre la entidad origen y finalmente otro clic sobre la entidad destino.\
-    En el ejemplo, la entidad origen es estudiante y la entidad destino es materia.  Una vez se señale las entidades, se abre un menú donde se solicita el nombre de la relación entre ambas entidades, ingresar `ESTUDIANTE_MATERIA`. Por conveniencia, el nombre de las relaciones se puede generar mediante la concatenación del nombre de ambas entidades. Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
+    Una vez aceptados los cambios, se logra crear la relación entre Estudiante y Materia como lo muestra la siguiente figura.
 
     ![Alt text](images/RelacionEstudMateria.JPG?raw=true "Relación Estudiante y Materia")
 
@@ -160,12 +163,15 @@ El modelo Entidad-Relación(E/R) completo que da solución al anterior caso es e
 
     ![Alt text](images/ProfesorAgregado.JPG?raw=true "Entidades Profesor")
 
-    **Aquí hay una inconsistencia, si yo dibujo la relación de materia a profesor la flecha no queda igual, para reforzar la dirección, hay que poner el nombre de la relación Origen_Destino**\
-    A diferencia de la anterior relación, una materia es impartida por solo un profesor, por tanto la relación que se debe agregar es una relación 1:N de de Materia a Profesor, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*. Al realizar esto, se espera tener lo siguiente.
+    A diferencia de la anterior relación, una materia es impartida por solo un profesor y un profesor puede impartir varias materias, por tanto la relación que se debe agregar es una relación 1:N de Profesor a Materia, para ello se hace el mismo procedimiento de la relación anterior solo que en esta ocasión debe hacerse mediante la opción *Nueva Relación 1:N*, ingrese `PROFESOR_MATERIA` como nombre de la relación. Al realizar esto, se espera tener lo siguiente.
 
     ![Alt text](images/ModeloCompleto.JPG?raw=true "Relación Profesor y Materia")
 
-    **Creo que aquí hay que explicar lo de las llaves foraneas cuando hay una relación de uno a muchos**\
+    Observe que al acceder a las propiedas de la entidad Materia mediante doble clic sobre esta, en la lista de sus atributos se ha generado uno nuevo cuyas propiedades no se pueden modificar.
+    Este nuevo atributo hace referencia a la clave primaria (identificador) de la entidad Profesor. Esto es debido a que este nuevo atributo es una clave foránea de la entidad Materia que siempre apuntará a algún registro de la tabla Profesor, esto se puede evidenciar en la siguiente figura.
+    De esta manera, cada registro de la tabla Materia conoce cuál es el registro del profesor que la imparte mediante su identificador.
+
+    ![Alt text](images/MateriaClaveProfesor.JPG?raw=true "Clave foránea de Profesor en Materia")
 
     Finalmente, hemos terminado de pasar el modelo E/R en notación de Chen, ilustrado en la siguiente figura, a un modelo lógico de Oracle listo para ser implementado.
 

@@ -67,7 +67,6 @@
 <engineerTo>
 <item key="F3C4B626-423E-02A0-DC33-DBE73528B563" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <referedAttribute>6D85C679-0C46-4241-07F3-5EE1B90E09D1</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
