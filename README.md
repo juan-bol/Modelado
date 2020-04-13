@@ -1,7 +1,7 @@
 # Tutorial de Oracle sql Developer Datamodeler
 ## Escrito por Juan David Bolaños, revisado por Angela Villota Gómez.
 
-## Introducción
+### Introducción
 
 Este tutorial tiene como objetivo permitir a los estudiantes del curso Modelado de Sistemas de Información familiarizarse con la herramienta Oracle sql Developer Datamodeler, una herramienta que asiste el diseño lógico de una base de datos (i.e., creación de modelo conceptual y el esquema de la base de datos)
 
@@ -254,7 +254,7 @@ El modelo Entidad-Relación (E/R) completo que da solución al anterior caso es 
     Una vez se hace clic sobre la anterior opción, se despliega un menú en el que se deben seleccionar el motor de la base datos Oracle a utilizar y el modelo relacional del que se quiere generar el DDL. Finalmente, hacer clic en la opción *Generar*, lo cual despliega un nuevo submenú donde el usuario puede configurar cómo quiere generar el DDL para cada sentencia.
     Como nos interesa que el DDL sea un proceso repetible para poder restaurar continuamente la estructrua de la base de datos, es importante que este script inicie con las sentencias DROP, para ello se debe abrir la pestaña *Selección 'DROP'* en el submenú anterior y seleccionar las opciones *Tabla* y *Claves Ajenas*. Esta configuración se ilustra en la siguiente figura.
 
-    ![Alt text](images/IngenieriaDrop.JPG?raw=true "Ingeniería Drop")
+    ![Alt text](images/IngenieriaDROP.JPG?raw=true "Ingeniería Drop")
 
     Haga clic en la opción *Aceptar* para generar el DDL de la base de datos, aquí se pueden observar cada una de las sentencias necesarias para (1) eliminar las tablas, (2) crear las tablas con sus columnas claves primarias, y (3) alterar las tablas para crear las calves foráneas y relaciones entre ellas. A continuación, se muestra el DDL generado.
 
